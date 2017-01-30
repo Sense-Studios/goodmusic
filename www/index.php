@@ -18,25 +18,25 @@
     $image = IsSet($data->cover) && IsSet($data->cover->link)? $data->cover->link: $image;
   } 
 ?><!DOCTYPE html>
-<html ng-app="app" class="target-{!target!} fixed-header fixed-footer loading" version="{!version!}">
+<html ng-app="app" class="target-APP fixed-header fixed-footer loading" version="1.6.2">
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="description" content="{!title!}">
+  <meta name="description" content="The Good Music Company">
   <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
   <meta name="viewport" content="width=device-width" />
   <script type="text/javascript">Firebase = {}</script>
-  <script src="{!baseUrl!}app/app.lib.js"></script>
-  <script src="{!baseUrl!}app/app.src.js"></script>
-  <script src="{!baseUrl!}app/app.views.js"></script>
-	<link href="{!baseUrl!}app/app.lib.css" rel="stylesheet"></link>
-	<link href="{!baseUrl!}app/app.src.css" rel="stylesheet"></link>
+  <script src="app/app.lib.js"></script>
+  <script src="app/app.src.js"></script>
+  <script src="app/app.views.js"></script>
+	<link href="app/app.lib.css" rel="stylesheet"></link>
+	<link href="app/app.src.css" rel="stylesheet"></link>
   <meta property="og:url" content="<?php echo $url; ?>"/>
   <meta property="og:title" content="<?php echo htmlspecialchars($title); ?>"/>
   <meta property="og:description" content="<?php echo htmlspecialchars($description); ?>"/>
   <meta property="og:image" content="<?php echo $image; ?>"/>
 
-  <title>{!title!}</title>
+  <title>The Good Music Company</title>
   </script>
 </head>
 <body class="loading">
