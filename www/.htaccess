@@ -1,0 +1,32 @@
+Header set Access-Control-Allow-Origin "*"
+Header set Access-Control-Allow-Headers "origin, x-requested-with, content-type"
+Header set Access-Control-Allow-Methods "PUT, GET, POST, DELETE, OPTIONS"
+
+AddType image/svg+xml svg
+
+DirectoryIndex index.html
+<IfModule mod_rewrite.c>
+	RewriteEngine On
+ 
+  RewriteCond %{HTTP_USER_AGENT} "(iphone|ipad|ipod)" [NC]
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_URI} !^/download-ios.html
+  RewriteRule .* /download-ios.html [L]
+
+  RewriteCond %{HTTP_USER_AGENT} "android" [NC]
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_URI} !^/download-android.html
+  RewriteRule .* /download-android.html [L]
+
+  RewriteCond %{HTTP_USER_AGENT} "Firefox/[1-3]\." [NC,OR]
+  RewriteCond %{HTTP_USER_AGENT} Opera [NC,OR]
+  RewriteCond %{HTTP_USER_AGENT} "MSIE [1-8]\." [NC]
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_URI} !^/upgrade.html
+  RewriteRule ^(.*)$ /upgrade.html [L]
+
+	RewriteRule ^$ index.php [QSA,L]
+	RewriteCond %{REQUEST_FILENAME} !-f
+	RewriteCond %{REQUEST_FILENAME} !-d
+	RewriteRule ^(.*)$ index.php [QSA,L]
+</IfModule>

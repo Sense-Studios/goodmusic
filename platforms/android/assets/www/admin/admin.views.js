@@ -1,0 +1,11 @@
+angular.module('views').run([
+  '$templateCache',
+  function (e) {
+    e.put('toolbelt/angular/angular-email.jade', '<form name="emailForm" ng-submit="send()" class="form email-form"><select ng-show="subjects.split(\'\\n\').length &gt; 1" name="subject" ng-model="subject" ng-options="label for label in subjects.split(\'\\n\')" class="email-subjects"></select><input required="required" type="text" name="fromName" placeholder="Your name" ng-pattern="/^[a-zA-Z ]+$/" ng-model="email.fromName" class="email-text"/><input required="required" type="text" name="from" placeholder="Your email" ng-pattern="/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,4}$/" ng-model="email.from" class="email-email"/><textarea placeholder="{{placeholder || \'Your message\'}}" name="msg" ng-model="msg" ng-focus="enable()" class="email-msg"></textarea><input type="submit" value="{{msgs[status]}}" class="email-send {{status}}"/><div class="clearfix"></div></form>');
+  }
+]), angular.module('views').run([
+  '$templateCache',
+  function (e) {
+    e.put('toolbelt/angular/angular-firebase-auth-login.jade', '<div class="container login-container"><div class="row"><div class="col-sm-6 col-sm-offset-3"><h2>The Good Music Company <span class="text-primary pull-right">Admin</span></h2><hr/><form role="form" ng-show="!init()" class="form-horizontal"><div class="form-group"><label for="email" class="control-label col-sm-4">E-mail</label><div class="col-sm-8"><input id="email" ng-model="email" type="email" class="form-control"/></div></div><div class="form-group"><label for="password" class="control-label col-sm-4">Password</label><div class="col-sm-8"><input id="password" ui-keypress="{13:\'login(email,password)\'}" ng-model="password" type="password" class="form-control"/></div></div><button type="button" hm-tap="login(email,password)" class="btn btn-primary pull-right">Login</button><div ng-show="busy" class="alert alert-warning"><h3>logging in...</h3></div><div ng-show="error" class="alert alert-danger"><h3>login failed ({{error.code}})</h3></div></form><div ng-show="init()" class="alert alert-info"><h3>logging in...</h3></div></div></div></div>');
+  }
+]);

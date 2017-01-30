@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html ng-app="app" class="target-{!target!} fixed-header fixed-footer loading" version="{!version!}">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="{!title!}">
+  <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+  <meta name="viewport" content="width=device-width" />
+  <!--<script type='text/javascript' src='http://cdn.firebase.com/v0/firebase.js'></script>-->
+  <script type="text/javascript">Firebase = {}</script>
+  <script src="{!baseUrl!}cordova.js"></script>
+  <script src="{!baseUrl!}bootstrap.js" manifest="manifest.json" server="{!manifest!}"></script>
+  <title>{!title!}</title>
+</head>
+<body class="loading">
+    <div ui-view="menu"></div>
+    <div ui-view="content"></div>
+    <div ui-view="footer"></div>
+</body>
+</html>
