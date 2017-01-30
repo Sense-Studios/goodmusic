@@ -16,8 +16,8 @@
   <plugin name="cordova-plugin-file-transfer"/>
   <plugin name="cordova-plugin-inappbrowser" spec="1.5.0"/>
   <plugin name="cordova-plugin-media" />
-  <plugin name="nl.madebymark.share" />
-  <plugin name="cordova-plugin-whitelist" />
+  <!-- <plugin name="nl.madebymark.share" /> -->
+  <plugin name="cordova-plugin-whitelist" spec="1.0" />
   <plugin name="pushwoosh-cordova-plugin" />
 
   <access origin="*"/>
